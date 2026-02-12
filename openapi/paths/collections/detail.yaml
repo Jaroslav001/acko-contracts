@@ -1,0 +1,63 @@
+parameters:
+  - $ref: '../../components/parameters/collections/CollectionId.yaml'
+get:
+  tags: [Collections]
+  operationId: getCollection
+  summary: Get a collection by id
+  security:
+    - bearerAuth: []
+  responses:
+    '200':
+      description: Collection detail
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/collections/CollectionResponse.yaml'
+    '401':
+      $ref: '../../components/responses/common/Unauthorized.yaml'
+    '403':
+      $ref: '../../components/responses/common/Forbidden.yaml'
+    '404':
+      $ref: '../../components/responses/common/NotFound.yaml'
+post:
+  tags: [Collections]
+  operationId: updateCollection
+  summary: Update a collection
+  security:
+    - bearerAuth: []
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '../../components/schemas/collections/UpdateCollectionRequest.yaml'
+  responses:
+    '200':
+      description: Collection updated
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/collections/CollectionResponse.yaml'
+    '401':
+      $ref: '../../components/responses/common/Unauthorized.yaml'
+    '403':
+      $ref: '../../components/responses/common/Forbidden.yaml'
+    '404':
+      $ref: '../../components/responses/common/NotFound.yaml'
+    '422':
+      $ref: '../../components/responses/common/ValidationError.yaml'
+delete:
+  tags: [Collections]
+  operationId: deleteCollection
+  summary: Delete a collection
+  security:
+    - bearerAuth: []
+  responses:
+    '204':
+      description: Collection deleted
+    '401':
+      $ref: '../../components/responses/common/Unauthorized.yaml'
+    '403':
+      $ref: '../../components/responses/common/Forbidden.yaml'
+    '404':
+      $ref: '../../components/responses/common/NotFound.yaml'

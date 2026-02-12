@@ -1,0 +1,29 @@
+parameters:
+  - $ref: '../../components/parameters/collections/CollectionId.yaml'
+post:
+  tags: [Collections]
+  operationId: reorderCollectionNodes
+  summary: Reorder nodes in a parent container
+  security:
+    - bearerAuth: []
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '../../components/schemas/collections/ReorderCollectionNodesRequest.yaml'
+  responses:
+    '200':
+      description: Reordered nodes
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/collections/CollectionNodeListResponse.yaml'
+    '401':
+      $ref: '../../components/responses/common/Unauthorized.yaml'
+    '403':
+      $ref: '../../components/responses/common/Forbidden.yaml'
+    '404':
+      $ref: '../../components/responses/common/NotFound.yaml'
+    '422':
+      $ref: '../../components/responses/common/ValidationError.yaml'

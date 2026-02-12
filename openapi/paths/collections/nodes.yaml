@@ -1,0 +1,50 @@
+parameters:
+  - $ref: '../../components/parameters/collections/CollectionId.yaml'
+get:
+  tags: [Collections]
+  operationId: listCollectionNodes
+  summary: List nodes in a collection by parent
+  security:
+    - bearerAuth: []
+  parameters:
+    - $ref: '../../components/parameters/collections/ParentId.yaml'
+  responses:
+    '200':
+      description: Collection nodes
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/collections/CollectionNodeListResponse.yaml'
+    '401':
+      $ref: '../../components/responses/common/Unauthorized.yaml'
+    '403':
+      $ref: '../../components/responses/common/Forbidden.yaml'
+    '404':
+      $ref: '../../components/responses/common/NotFound.yaml'
+post:
+  tags: [Collections]
+  operationId: createCollectionNode
+  summary: Create a node in a collection
+  security:
+    - bearerAuth: []
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '../../components/schemas/collections/StoreCollectionNodeRequest.yaml'
+  responses:
+    '201':
+      description: Node created
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/collections/CollectionNodeResponse.yaml'
+    '401':
+      $ref: '../../components/responses/common/Unauthorized.yaml'
+    '403':
+      $ref: '../../components/responses/common/Forbidden.yaml'
+    '404':
+      $ref: '../../components/responses/common/NotFound.yaml'
+    '422':
+      $ref: '../../components/responses/common/ValidationError.yaml'

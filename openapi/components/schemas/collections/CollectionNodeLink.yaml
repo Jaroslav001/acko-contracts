@@ -1,0 +1,13 @@
+type: object
+required: [url]
+properties:
+  url:
+    type: string
+    format: uri
+    maxLength: 2048
+  label:
+    type: [string, 'null']
+    maxLength: 255
+  metadata:
+    type: object
+    additionalProperties: true

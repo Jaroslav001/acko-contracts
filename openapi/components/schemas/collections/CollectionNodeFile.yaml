@@ -1,0 +1,29 @@
+type: object
+required: [disk, storage_key, original_name, size_bytes, status]
+properties:
+  disk:
+    type: string
+    maxLength: 50
+    default: s3
+  storage_key:
+    type: string
+    maxLength: 1024
+  original_name:
+    type: string
+    maxLength: 255
+  mime_type:
+    type: [string, 'null']
+    maxLength: 255
+  size_bytes:
+    type: integer
+    minimum: 0
+  checksum:
+    type: [string, 'null']
+    maxLength: 255
+  status:
+    type: string
+    maxLength: 100
+    default: ready
+  metadata:
+    type: object
+    additionalProperties: true

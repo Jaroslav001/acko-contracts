@@ -1,0 +1,61 @@
+type: object
+required:
+  - id
+  - collection_id
+  - node_type
+  - display_name
+  - position
+  - created_at
+  - updated_at
+properties:
+  id:
+    type: integer
+    minimum: 1
+  collection_id:
+    type: integer
+    minimum: 1
+  parent_id:
+    anyOf:
+      - type: integer
+        minimum: 1
+      - type: 'null'
+  node_type:
+    type: string
+    enum: [container, leaf]
+  leaf_kind:
+    anyOf:
+      - type: string
+        enum: [file, link]
+      - type: 'null'
+  display_name:
+    type: string
+    minLength: 1
+    maxLength: 255
+  position:
+    type: integer
+    minimum: 0
+  layout_x:
+    anyOf:
+      - type: integer
+      - type: 'null'
+  layout_y:
+    anyOf:
+      - type: integer
+      - type: 'null'
+  metadata:
+    type: object
+    additionalProperties: true
+  file:
+    anyOf:
+      - $ref: './CollectionNodeFile.yaml'
+      - type: 'null'
+  link:
+    anyOf:
+      - $ref: './CollectionNodeLink.yaml'
+      - type: 'null'
+  created_at:
+    type: string
+    format: date-time
+  updated_at:
+    type: string
+    format: date-time

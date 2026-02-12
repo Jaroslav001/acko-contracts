@@ -1,0 +1,30 @@
+parameters:
+  - $ref: '../../components/parameters/collections/CollectionId.yaml'
+  - $ref: '../../components/parameters/collections/NodeId.yaml'
+post:
+  tags: [Collections]
+  operationId: moveCollectionNode
+  summary: Move a node to another parent in the collection
+  security:
+    - bearerAuth: []
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '../../components/schemas/collections/MoveCollectionNodeRequest.yaml'
+  responses:
+    '200':
+      description: Node moved
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/collections/CollectionNodeResponse.yaml'
+    '401':
+      $ref: '../../components/responses/common/Unauthorized.yaml'
+    '403':
+      $ref: '../../components/responses/common/Forbidden.yaml'
+    '404':
+      $ref: '../../components/responses/common/NotFound.yaml'
+    '422':
+      $ref: '../../components/responses/common/ValidationError.yaml'

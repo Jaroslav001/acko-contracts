@@ -1,0 +1,8 @@
+type: object
+properties:
+  destination_parent_id:
+    anyOf:
+      - type: integer
+        minimum: 1
+      - type: 'null'
+additionalProperties: false

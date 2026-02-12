@@ -1,0 +1,7 @@
+name: type
+in: query
+required: false
+schema:
+  type: string
+  enum: [drive, gallery]
+description: Optional collection type filter.

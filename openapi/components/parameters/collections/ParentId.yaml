@@ -1,0 +1,7 @@
+name: parent_id
+in: query
+required: false
+schema:
+  type: integer
+  minimum: 1
+description: Parent node id. If omitted, root nodes are returned.

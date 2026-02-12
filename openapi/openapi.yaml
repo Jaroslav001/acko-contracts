@@ -1,0 +1,91 @@
+openapi: 3.1.0
+info:
+  title: Collections API
+  version: 0.1.0
+  description: |
+    Initial API contract for Collections domain.
+    Scope is limited to `/api/collections` endpoints.
+  license:
+    name: Proprietary
+    identifier: LicenseRef-Proprietary
+servers:
+  - url: /
+tags:
+  - name: Collections
+    description: Resource collections and their nodes.
+paths:
+  /api/collections:
+    $ref: './paths/collections/list-create.yaml'
+  /api/collections/{id}:
+    $ref: './paths/collections/detail.yaml'
+  /api/collections/{id}/nodes:
+    $ref: './paths/collections/nodes.yaml'
+  /api/collections/{id}/nodes/{nodeId}:
+    $ref: './paths/collections/node-detail.yaml'
+  /api/collections/{id}/nodes/{nodeId}/move:
+    $ref: './paths/collections/node-move.yaml'
+  /api/collections/{id}/nodes/reorder:
+    $ref: './paths/collections/nodes-reorder.yaml'
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  parameters:
+    CollectionId:
+      $ref: './components/parameters/collections/CollectionId.yaml'
+    ParentId:
+      $ref: './components/parameters/collections/ParentId.yaml'
+    NodeId:
+      $ref: './components/parameters/collections/NodeId.yaml'
+    PerPage:
+      $ref: './components/parameters/collections/PerPage.yaml'
+    SortBy:
+      $ref: './components/parameters/collections/SortBy.yaml'
+    SortDirection:
+      $ref: './components/parameters/collections/SortDirection.yaml'
+    Type:
+      $ref: './components/parameters/collections/Type.yaml'
+  schemas:
+    Collection:
+      $ref: './components/schemas/collections/Collection.yaml'
+    CollectionNode:
+      $ref: './components/schemas/collections/CollectionNode.yaml'
+    CollectionNodeFile:
+      $ref: './components/schemas/collections/CollectionNodeFile.yaml'
+    CollectionNodeLink:
+      $ref: './components/schemas/collections/CollectionNodeLink.yaml'
+    CollectionListResponse:
+      $ref: './components/schemas/collections/CollectionListResponse.yaml'
+    CollectionResponse:
+      $ref: './components/schemas/collections/CollectionResponse.yaml'
+    CollectionNodeListResponse:
+      $ref: './components/schemas/collections/CollectionNodeListResponse.yaml'
+    CollectionNodeResponse:
+      $ref: './components/schemas/collections/CollectionNodeResponse.yaml'
+    StoreCollectionRequest:
+      $ref: './components/schemas/collections/StoreCollectionRequest.yaml'
+    UpdateCollectionRequest:
+      $ref: './components/schemas/collections/UpdateCollectionRequest.yaml'
+    StoreCollectionNodeRequest:
+      $ref: './components/schemas/collections/StoreCollectionNodeRequest.yaml'
+    UpdateCollectionNodeRequest:
+      $ref: './components/schemas/collections/UpdateCollectionNodeRequest.yaml'
+    MoveCollectionNodeRequest:
+      $ref: './components/schemas/collections/MoveCollectionNodeRequest.yaml'
+    ReorderCollectionNodesRequest:
+      $ref: './components/schemas/collections/ReorderCollectionNodesRequest.yaml'
+    MessageError:
+      $ref: './components/schemas/common/MessageError.yaml'
+    ValidationError:
+      $ref: './components/schemas/common/ValidationError.yaml'
+  responses:
+    Unauthorized:
+      $ref: './components/responses/common/Unauthorized.yaml'
+    Forbidden:
+      $ref: './components/responses/common/Forbidden.yaml'
+    NotFound:
+      $ref: './components/responses/common/NotFound.yaml'
+    ValidationError:
+      $ref: './components/responses/common/ValidationError.yaml'

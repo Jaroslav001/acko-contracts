@@ -1,0 +1,21 @@
+type: object
+properties:
+  display_name:
+    type: string
+    minLength: 1
+    maxLength: 255
+  position:
+    type: integer
+    minimum: 0
+  layout_x:
+    type: integer
+  layout_y:
+    type: integer
+  metadata:
+    type: object
+    additionalProperties: true
+  file:
+    $ref: './CollectionNodeFile.yaml'
+  link:
+    $ref: './CollectionNodeLink.yaml'
+additionalProperties: false

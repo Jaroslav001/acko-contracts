@@ -1,0 +1,7 @@
+name: nodeId
+in: path
+required: true
+description: Collection node identifier.
+schema:
+  type: integer
+  minimum: 1

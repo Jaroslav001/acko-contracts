@@ -1,0 +1,8 @@
+name: sort_direction
+in: query
+required: false
+schema:
+  type: string
+  enum: [asc, desc]
+  default: desc
+description: Sort direction.
