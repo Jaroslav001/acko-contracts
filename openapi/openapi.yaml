@@ -48,6 +48,18 @@ paths:
     $ref: './paths/galleries/uploads-complete.yaml'
   /api/galleries/{galleryId}/uploads/{uploadId}/abort:
     $ref: './paths/galleries/uploads-abort.yaml'
+  /api/uploads/initiate:
+    $ref: './paths/uploads/initiate.yaml'
+  /api/uploads/{uploadId}:
+    $ref: './paths/uploads/status.yaml'
+  /api/uploads/{uploadId}/part-url:
+    $ref: './paths/uploads/part-url.yaml'
+  /api/uploads/{uploadId}/part-urls:
+    $ref: './paths/uploads/part-urls.yaml'
+  /api/uploads/{uploadId}/complete:
+    $ref: './paths/uploads/complete.yaml'
+  /api/uploads/{uploadId}/abort:
+    $ref: './paths/uploads/abort.yaml'
 components:
   securitySchemes:
     bearerAuth:
@@ -136,6 +148,16 @@ components:
       $ref: './components/schemas/galleries/CompleteGalleryUploadRequest.yaml'
     CompleteGalleryUploadResponse:
       $ref: './components/schemas/galleries/CompleteGalleryUploadResponse.yaml'
+    InitiateUploadRequest:
+      $ref: './components/schemas/uploads/InitiateUploadRequest.yaml'
+    GetUploadPartUrlRequest:
+      $ref: './components/schemas/uploads/GetUploadPartUrlRequest.yaml'
+    GetUploadPartUrlsRequest:
+      $ref: './components/schemas/uploads/GetUploadPartUrlsRequest.yaml'
+    CompleteUploadRequest:
+      $ref: './components/schemas/uploads/CompleteUploadRequest.yaml'
+    AbortUploadRequest:
+      $ref: './components/schemas/uploads/AbortUploadRequest.yaml'
     MessageError:
       $ref: './components/schemas/common/MessageError.yaml'
     ValidationError:

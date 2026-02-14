@@ -1,0 +1,21 @@
+type: object
+required: [target_type, target_id, file_name, mime_type, size_bytes]
+properties:
+  target_type:
+    type: string
+    enum: [gallery]
+  target_id:
+    type: integer
+    minimum: 1
+  file_name:
+    type: string
+    minLength: 1
+    maxLength: 255
+  mime_type:
+    type: string
+    minLength: 1
+    maxLength: 255
+  size_bytes:
+    type: integer
+    minimum: 1
+additionalProperties: false

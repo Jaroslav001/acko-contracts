@@ -1,0 +1,27 @@
+type: object
+required: [target_type, target_id]
+properties:
+  target_type:
+    type: string
+    enum: [gallery]
+  target_id:
+    type: integer
+    minimum: 1
+  desired_position:
+    type: integer
+    minimum: 0
+  parts:
+    type: array
+    minItems: 1
+    items:
+      type: object
+      required: [part_number]
+      properties:
+        part_number:
+          type: integer
+          minimum: 1
+        etag:
+          anyOf:
+            - type: string
+            - type: 'null'
+additionalProperties: false

@@ -1,0 +1,29 @@
+type: object
+required: [target_type, target_id, parts]
+properties:
+  target_type:
+    type: string
+    enum: [gallery]
+  target_id:
+    type: integer
+    minimum: 1
+  parts:
+    type: array
+    minItems: 1
+    maxItems: 100
+    items:
+      type: object
+      required: [part_number, content_length]
+      properties:
+        part_number:
+          type: integer
+          minimum: 1
+        content_length:
+          type: integer
+          minimum: 1
+        checksum:
+          anyOf:
+            - type: string
+            - type: 'null'
+      additionalProperties: false
+additionalProperties: false

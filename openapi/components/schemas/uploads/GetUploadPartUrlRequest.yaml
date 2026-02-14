@@ -1,0 +1,20 @@
+type: object
+required: [target_type, target_id, part_number, content_length]
+properties:
+  target_type:
+    type: string
+    enum: [gallery]
+  target_id:
+    type: integer
+    minimum: 1
+  part_number:
+    type: integer
+    minimum: 1
+  content_length:
+    type: integer
+    minimum: 1
+  checksum:
+    anyOf:
+      - type: string
+      - type: 'null'
+additionalProperties: false
