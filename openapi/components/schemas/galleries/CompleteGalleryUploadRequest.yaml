@@ -8,12 +8,13 @@ properties:
     minItems: 1
     items:
       type: object
-      required: [part_number, etag]
+      required: [part_number]
       properties:
         part_number:
           type: integer
           minimum: 1
         etag:
-          type: string
-          minLength: 1
+          anyOf:
+            - type: string
+            - type: 'null'
 additionalProperties: false
