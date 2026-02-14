@@ -1,0 +1,27 @@
+parameters:
+  - $ref: '../../components/parameters/galleries/GalleryId.yaml'
+post:
+  tags: [Galleries]
+  operationId: reorderGalleryFullAssets
+  summary: Reorder gallery assets
+  security:
+    - bearerAuth: []
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '../../components/schemas/galleries/ReorderGalleryAssetsRequest.yaml'
+  responses:
+    '200':
+      description: Reordered full gallery assets payload
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/galleries/GalleryFullAssetsResponse.yaml'
+    '401':
+      $ref: '../../components/responses/common/Unauthorized.yaml'
+    '404':
+      $ref: '../../components/responses/common/NotFound.yaml'
+    '422':
+      $ref: '../../components/responses/common/ValidationError.yaml'

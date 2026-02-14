@@ -1,0 +1,8 @@
+name: uploadId
+in: path
+required: true
+description: Upload session identifier.
+schema:
+  type: string
+  minLength: 1
+  maxLength: 255

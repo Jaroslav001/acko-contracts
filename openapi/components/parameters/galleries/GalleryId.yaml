@@ -1,0 +1,7 @@
+name: galleryId
+in: path
+required: true
+description: Gallery identifier.
+schema:
+  type: integer
+  minimum: 1

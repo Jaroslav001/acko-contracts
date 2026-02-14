@@ -1,0 +1,7 @@
+name: assetId
+in: path
+required: true
+description: Gallery asset identifier.
+schema:
+  type: integer
+  minimum: 1

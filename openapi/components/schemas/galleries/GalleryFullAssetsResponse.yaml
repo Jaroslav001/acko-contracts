@@ -1,0 +1,16 @@
+type: object
+required: [data]
+properties:
+  data:
+    type: object
+    required:
+      - gallery_id
+      - items
+    properties:
+      gallery_id:
+        type: integer
+        minimum: 1
+      items:
+        type: array
+        items:
+          $ref: './GalleryAsset.yaml'

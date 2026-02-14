@@ -1,0 +1,31 @@
+type: object
+required: [data]
+properties:
+  data:
+    type: object
+    required:
+      - items
+    properties:
+      items:
+        type: array
+        items:
+          type: object
+          required:
+            - part_number
+            - method
+            - url
+            - headers
+          properties:
+            part_number:
+              type: integer
+              minimum: 1
+            method:
+              type: string
+              enum: [PUT]
+            url:
+              type: string
+              format: uri
+            headers:
+              type: object
+              additionalProperties:
+                type: string

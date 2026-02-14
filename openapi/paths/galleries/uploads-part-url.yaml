@@ -1,0 +1,28 @@
+parameters:
+  - $ref: '../../components/parameters/galleries/GalleryId.yaml'
+  - $ref: '../../components/parameters/galleries/UploadId.yaml'
+post:
+  tags: [Galleries]
+  operationId: getGalleryUploadPartUrl
+  summary: Get signed upload URL for one multipart chunk
+  security:
+    - bearerAuth: []
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '../../components/schemas/galleries/GetGalleryUploadPartUrlRequest.yaml'
+  responses:
+    '200':
+      description: Signed URL for upload part
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/galleries/GetGalleryUploadPartUrlResponse.yaml'
+    '401':
+      $ref: '../../components/responses/common/Unauthorized.yaml'
+    '404':
+      $ref: '../../components/responses/common/NotFound.yaml'
+    '422':
+      $ref: '../../components/responses/common/ValidationError.yaml'

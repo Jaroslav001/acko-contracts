@@ -1,0 +1,12 @@
+type: object
+required:
+  - id
+  - items
+properties:
+  id:
+    type: integer
+    minimum: 1
+  items:
+    type: array
+    items:
+      $ref: './GalleryMinViewItem.yaml'

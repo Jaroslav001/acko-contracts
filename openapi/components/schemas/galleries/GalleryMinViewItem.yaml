@@ -1,0 +1,14 @@
+type: object
+required:
+  - kind
+  - conversions
+properties:
+  kind:
+    type: string
+    enum: [image, video]
+  conversions:
+    type: object
+    minProperties: 1
+    additionalProperties:
+      type: string
+      format: uri

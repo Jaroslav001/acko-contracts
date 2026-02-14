@@ -1,0 +1,16 @@
+type: object
+required:
+  - part_number
+  - content_length
+properties:
+  part_number:
+    type: integer
+    minimum: 1
+  content_length:
+    type: integer
+    minimum: 1
+  checksum:
+    anyOf:
+      - type: string
+      - type: 'null'
+additionalProperties: false

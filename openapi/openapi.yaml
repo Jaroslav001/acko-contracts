@@ -1,6 +1,6 @@
 openapi: 3.1.0
 info:
-  title: Collections API
+  title: Collections and Galleries API
   version: 0.1.0
   description: |
     Initial API contract for Collections domain.
@@ -13,6 +13,8 @@ servers:
 tags:
   - name: Collections
     description: Resource collections and their nodes.
+  - name: Galleries
+    description: Simplified gallery read models for media display.
 paths:
   /api/collections:
     $ref: './paths/collections/list-create.yaml'
@@ -26,6 +28,26 @@ paths:
     $ref: './paths/collections/node-move.yaml'
   /api/collections/{id}/nodes/reorder:
     $ref: './paths/collections/nodes-reorder.yaml'
+  /api/galleries/{galleryId}/minview:
+    $ref: './paths/galleries/minview.yaml'
+  /api/galleries/{galleryId}/fullassets:
+    $ref: './paths/galleries/fullassets.yaml'
+  /api/galleries/{galleryId}/fullassets/reorder:
+    $ref: './paths/galleries/fullassets-reorder.yaml'
+  /api/galleries/{galleryId}/fullassets/{assetId}:
+    $ref: './paths/galleries/fullassets-detail.yaml'
+  /api/galleries/{galleryId}/uploads/initiate:
+    $ref: './paths/galleries/uploads-initiate.yaml'
+  /api/galleries/{galleryId}/uploads/{uploadId}:
+    $ref: './paths/galleries/uploads-status.yaml'
+  /api/galleries/{galleryId}/uploads/{uploadId}/part-url:
+    $ref: './paths/galleries/uploads-part-url.yaml'
+  /api/galleries/{galleryId}/uploads/{uploadId}/part-urls:
+    $ref: './paths/galleries/uploads-part-urls.yaml'
+  /api/galleries/{galleryId}/uploads/{uploadId}/complete:
+    $ref: './paths/galleries/uploads-complete.yaml'
+  /api/galleries/{galleryId}/uploads/{uploadId}/abort:
+    $ref: './paths/galleries/uploads-abort.yaml'
 components:
   securitySchemes:
     bearerAuth:
@@ -47,6 +69,12 @@ components:
       $ref: './components/parameters/collections/SortDirection.yaml'
     Type:
       $ref: './components/parameters/collections/Type.yaml'
+    GalleryId:
+      $ref: './components/parameters/galleries/GalleryId.yaml'
+    AssetId:
+      $ref: './components/parameters/galleries/AssetId.yaml'
+    UploadId:
+      $ref: './components/parameters/galleries/UploadId.yaml'
   schemas:
     Collection:
       $ref: './components/schemas/collections/Collection.yaml'
@@ -76,6 +104,38 @@ components:
       $ref: './components/schemas/collections/MoveCollectionNodeRequest.yaml'
     ReorderCollectionNodesRequest:
       $ref: './components/schemas/collections/ReorderCollectionNodesRequest.yaml'
+    GalleryMinView:
+      $ref: './components/schemas/galleries/GalleryMinView.yaml'
+    GalleryMinViewItem:
+      $ref: './components/schemas/galleries/GalleryMinViewItem.yaml'
+    GalleryMinViewResponse:
+      $ref: './components/schemas/galleries/GalleryMinViewResponse.yaml'
+    GalleryAsset:
+      $ref: './components/schemas/galleries/GalleryAsset.yaml'
+    GalleryFullAssetsResponse:
+      $ref: './components/schemas/galleries/GalleryFullAssetsResponse.yaml'
+    ReorderGalleryAssetsRequest:
+      $ref: './components/schemas/galleries/ReorderGalleryAssetsRequest.yaml'
+    GalleryUploadSession:
+      $ref: './components/schemas/galleries/GalleryUploadSession.yaml'
+    InitiateGalleryUploadRequest:
+      $ref: './components/schemas/galleries/InitiateGalleryUploadRequest.yaml'
+    InitiateGalleryUploadResponse:
+      $ref: './components/schemas/galleries/InitiateGalleryUploadResponse.yaml'
+    GetGalleryUploadStatusResponse:
+      $ref: './components/schemas/galleries/GetGalleryUploadStatusResponse.yaml'
+    GetGalleryUploadPartUrlRequest:
+      $ref: './components/schemas/galleries/GetGalleryUploadPartUrlRequest.yaml'
+    GetGalleryUploadPartUrlResponse:
+      $ref: './components/schemas/galleries/GetGalleryUploadPartUrlResponse.yaml'
+    GetGalleryUploadPartUrlsRequest:
+      $ref: './components/schemas/galleries/GetGalleryUploadPartUrlsRequest.yaml'
+    GetGalleryUploadPartUrlsResponse:
+      $ref: './components/schemas/galleries/GetGalleryUploadPartUrlsResponse.yaml'
+    CompleteGalleryUploadRequest:
+      $ref: './components/schemas/galleries/CompleteGalleryUploadRequest.yaml'
+    CompleteGalleryUploadResponse:
+      $ref: './components/schemas/galleries/CompleteGalleryUploadResponse.yaml'
     MessageError:
       $ref: './components/schemas/common/MessageError.yaml'
     ValidationError:

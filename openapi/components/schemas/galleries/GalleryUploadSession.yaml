@@ -1,0 +1,45 @@
+type: object
+required:
+  - upload_id
+  - object_key
+  - status
+  - upload_mode
+  - chunk_size
+  - uploaded_parts
+  - bytes_uploaded
+  - upload_headers
+  - expires_at
+properties:
+  upload_id:
+    type: string
+  object_key:
+    type: string
+  status:
+    type: string
+    enum: [pending, uploading, completed, aborted, failed]
+  upload_mode:
+    type: string
+    enum: [multipart, single]
+  chunk_size:
+    type: integer
+    minimum: 1
+  uploaded_parts:
+    type: array
+    items:
+      type: integer
+      minimum: 1
+  bytes_uploaded:
+    type: integer
+    minimum: 0
+  upload_url:
+    anyOf:
+      - type: string
+        format: uri
+      - type: 'null'
+  upload_headers:
+    type: object
+    additionalProperties:
+      type: string
+  expires_at:
+    type: string
+    format: date-time

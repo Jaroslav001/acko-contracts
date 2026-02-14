@@ -1,0 +1,16 @@
+parameters:
+  - $ref: '../../components/parameters/galleries/GalleryId.yaml'
+get:
+  tags: [Galleries]
+  operationId: getGalleryMinView
+  summary: Get minimal gallery payload for rendering all media conversions
+  security: []
+  responses:
+    '200':
+      description: Minimal gallery preview payload
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/galleries/GalleryMinViewResponse.yaml'
+    '404':
+      $ref: '../../components/responses/common/NotFound.yaml'

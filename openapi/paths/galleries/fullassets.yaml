@@ -1,0 +1,32 @@
+parameters:
+  - $ref: '../../components/parameters/galleries/GalleryId.yaml'
+get:
+  tags: [Galleries]
+  operationId: listGalleryFullAssets
+  summary: List full gallery assets for management UI
+  security:
+    - bearerAuth: []
+  responses:
+    '200':
+      description: Full gallery assets payload
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/galleries/GalleryFullAssetsResponse.yaml'
+    '401':
+      $ref: '../../components/responses/common/Unauthorized.yaml'
+    '404':
+      $ref: '../../components/responses/common/NotFound.yaml'
+delete:
+  tags: [Galleries]
+  operationId: deleteAllGalleryFullAssets
+  summary: Delete all gallery assets
+  security:
+    - bearerAuth: []
+  responses:
+    '204':
+      description: All gallery assets deleted
+    '401':
+      $ref: '../../components/responses/common/Unauthorized.yaml'
+    '404':
+      $ref: '../../components/responses/common/NotFound.yaml'

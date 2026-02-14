@@ -1,0 +1,49 @@
+type: object
+required:
+  - id
+  - display_name
+  - position
+  - kind
+  - status
+  - conversions
+  - created_at
+  - updated_at
+properties:
+  id:
+    type: integer
+    minimum: 1
+  display_name:
+    type: string
+    minLength: 1
+    maxLength: 255
+  position:
+    type: integer
+    minimum: 0
+  kind:
+    type: string
+    enum: [image, video]
+  status:
+    type: string
+    enum: [pending, uploading, processing, ready, failed]
+  mime_type:
+    anyOf:
+      - type: string
+        maxLength: 255
+      - type: 'null'
+  size_bytes:
+    anyOf:
+      - type: integer
+        minimum: 0
+      - type: 'null'
+  conversions:
+    type: object
+    minProperties: 1
+    additionalProperties:
+      type: string
+      format: uri
+  created_at:
+    type: string
+    format: date-time
+  updated_at:
+    type: string
+    format: date-time
