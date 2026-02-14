@@ -3,7 +3,7 @@ required: [target_type, target_id, file_name, mime_type, size_bytes]
 properties:
   target_type:
     type: string
-    enum: [gallery]
+    enum: [gallery, drive]
   target_id:
     type: integer
     minimum: 1
