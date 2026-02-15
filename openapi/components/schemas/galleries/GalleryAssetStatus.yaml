@@ -1,0 +1,40 @@
+type: object
+required:
+  - id
+  - status
+  - conversions
+properties:
+  id:
+    type: integer
+    minimum: 1
+  status:
+    type: string
+    enum: [pending, uploading, processing, ready, failed]
+  conversions:
+    type: object
+    additionalProperties:
+      type: string
+      format: uri
+  upload_metrics:
+    anyOf:
+      - type: object
+        properties:
+          duration_ms:
+            type: integer
+            minimum: 0
+          avg_mbps:
+            type: number
+            minimum: 0
+          part_count:
+            type: integer
+            minimum: 1
+          chunk_size:
+            type: integer
+            minimum: 1
+        additionalProperties: true
+      - type: 'null'
+  updated_at:
+    anyOf:
+      - type: string
+        format: date-time
+      - type: 'null'

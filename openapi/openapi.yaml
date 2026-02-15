@@ -32,6 +32,8 @@ paths:
     $ref: './paths/galleries/minview.yaml'
   /api/galleries/{galleryId}/fullassets:
     $ref: './paths/galleries/fullassets.yaml'
+  /api/galleries/{galleryId}/assets/status:
+    $ref: './paths/galleries/assets-status.yaml'
   /api/galleries/{galleryId}/fullassets/reorder:
     $ref: './paths/galleries/fullassets-reorder.yaml'
   /api/galleries/{galleryId}/fullassets/{assetId}:
@@ -60,6 +62,8 @@ paths:
     $ref: './paths/uploads/part-urls.yaml'
   /api/uploads/{uploadId}/complete:
     $ref: './paths/uploads/complete.yaml'
+  /api/uploads/complete-batch:
+    $ref: './paths/uploads/complete-batch.yaml'
   /api/uploads/{uploadId}/abort:
     $ref: './paths/uploads/abort.yaml'
 components:
@@ -126,6 +130,12 @@ components:
       $ref: './components/schemas/galleries/GalleryMinViewResponse.yaml'
     GalleryAsset:
       $ref: './components/schemas/galleries/GalleryAsset.yaml'
+    GalleryAssetStatus:
+      $ref: './components/schemas/galleries/GalleryAssetStatus.yaml'
+    GalleryAssetStatusesRequest:
+      $ref: './components/schemas/galleries/GalleryAssetStatusesRequest.yaml'
+    GalleryAssetStatusesResponse:
+      $ref: './components/schemas/galleries/GalleryAssetStatusesResponse.yaml'
     GalleryFullAssetsResponse:
       $ref: './components/schemas/galleries/GalleryFullAssetsResponse.yaml'
     ReorderGalleryAssetsRequest:
@@ -164,6 +174,12 @@ components:
       $ref: './components/schemas/uploads/GetUploadPartUrlsRequest.yaml'
     CompleteUploadRequest:
       $ref: './components/schemas/uploads/CompleteUploadRequest.yaml'
+    CompleteUploadBatchItem:
+      $ref: './components/schemas/uploads/CompleteUploadBatchItem.yaml'
+    CompleteUploadBatchRequest:
+      $ref: './components/schemas/uploads/CompleteUploadBatchRequest.yaml'
+    CompleteUploadBatchResponse:
+      $ref: './components/schemas/uploads/CompleteUploadBatchResponse.yaml'
     AbortUploadRequest:
       $ref: './components/schemas/uploads/AbortUploadRequest.yaml'
     MessageError:

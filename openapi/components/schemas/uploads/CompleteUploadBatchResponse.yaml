@@ -1,0 +1,29 @@
+type: object
+required: [data]
+properties:
+  data:
+    type: object
+    required: [items]
+    properties:
+      items:
+        type: array
+        items:
+          type: object
+          required: [upload_id, success]
+          properties:
+            upload_id:
+              type: string
+              minLength: 1
+            success:
+              type: boolean
+            asset:
+              anyOf:
+                - $ref: '../galleries/GalleryAsset.yaml'
+                - type: 'null'
+            error:
+              anyOf:
+                - type: string
+                - type: 'null'
+          additionalProperties: false
+    additionalProperties: false
+additionalProperties: false
