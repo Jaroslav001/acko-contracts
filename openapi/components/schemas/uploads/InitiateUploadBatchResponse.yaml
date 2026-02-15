@@ -1,0 +1,22 @@
+type: object
+required: [data]
+properties:
+  data:
+    type: object
+    required: [items]
+    properties:
+      items:
+        type: array
+        items:
+          type: object
+          required: [client_id, session]
+          properties:
+            client_id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            session:
+              $ref: '../galleries/GalleryUploadSession.yaml'
+          additionalProperties: false
+    additionalProperties: false
+additionalProperties: false

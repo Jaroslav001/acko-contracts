@@ -50,6 +50,8 @@ paths:
     $ref: './paths/galleries/uploads-abort.yaml'
   /api/uploads/initiate:
     $ref: './paths/uploads/initiate.yaml'
+  /api/uploads/initiate-batch:
+    $ref: './paths/uploads/initiate-batch.yaml'
   /api/uploads/{uploadId}:
     $ref: './paths/uploads/status.yaml'
   /api/uploads/{uploadId}/part-url:
@@ -150,6 +152,12 @@ components:
       $ref: './components/schemas/galleries/CompleteGalleryUploadResponse.yaml'
     InitiateUploadRequest:
       $ref: './components/schemas/uploads/InitiateUploadRequest.yaml'
+    InitiateUploadBatchItem:
+      $ref: './components/schemas/uploads/InitiateUploadBatchItem.yaml'
+    InitiateUploadBatchRequest:
+      $ref: './components/schemas/uploads/InitiateUploadBatchRequest.yaml'
+    InitiateUploadBatchResponse:
+      $ref: './components/schemas/uploads/InitiateUploadBatchResponse.yaml'
     GetUploadPartUrlRequest:
       $ref: './components/schemas/uploads/GetUploadPartUrlRequest.yaml'
     GetUploadPartUrlsRequest:

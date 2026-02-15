@@ -1,0 +1,23 @@
+post:
+  tags: [Galleries]
+  operationId: initiateGenericUploadBatch
+  summary: Initiate generic upload sessions in batch
+  security:
+    - bearerAuth: []
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '../../components/schemas/uploads/InitiateUploadBatchRequest.yaml'
+  responses:
+    '201':
+      description: Upload sessions initiated
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/uploads/InitiateUploadBatchResponse.yaml'
+    '401':
+      $ref: '../../components/responses/common/Unauthorized.yaml'
+    '422':
+      $ref: '../../components/responses/common/ValidationError.yaml'

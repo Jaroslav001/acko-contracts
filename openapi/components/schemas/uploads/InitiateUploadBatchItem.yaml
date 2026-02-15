@@ -1,0 +1,19 @@
+type: object
+required: [client_id, file_name, mime_type, size_bytes]
+properties:
+  client_id:
+    type: string
+    minLength: 1
+    maxLength: 128
+  file_name:
+    type: string
+    minLength: 1
+    maxLength: 255
+  mime_type:
+    type: string
+    minLength: 1
+    maxLength: 255
+  size_bytes:
+    type: integer
+    minimum: 1
+additionalProperties: false
