@@ -41,6 +41,12 @@ properties:
     additionalProperties:
       type: string
       format: uri
+  error_message:
+    anyOf:
+      - type: string
+        minLength: 1
+        maxLength: 1000
+      - type: 'null'
   created_at:
     type: string
     format: date-time

@@ -15,23 +15,11 @@ properties:
     additionalProperties:
       type: string
       format: uri
-  upload_metrics:
+  error_message:
     anyOf:
-      - type: object
-        properties:
-          duration_ms:
-            type: integer
-            minimum: 0
-          avg_mbps:
-            type: number
-            minimum: 0
-          part_count:
-            type: integer
-            minimum: 1
-          chunk_size:
-            type: integer
-            minimum: 1
-        additionalProperties: true
+      - type: string
+        minLength: 1
+        maxLength: 1000
       - type: 'null'
   updated_at:
     anyOf:
