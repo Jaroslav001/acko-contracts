@@ -1,0 +1,15 @@
+type: object
+required: [id, slug, new_galleries]
+properties:
+  id:
+    type: integer
+    minimum: 1
+  slug:
+    type: string
+  name:
+    type: string
+  new_galleries:
+    type: array
+    items:
+      $ref: './NewGalleryPreviewMedia.yaml'
+additionalProperties: true

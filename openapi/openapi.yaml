@@ -15,6 +15,8 @@ tags:
     description: Resource collections and their nodes.
   - name: Galleries
     description: Simplified gallery read models for media display.
+  - name: Profiles
+    description: Profile detail endpoints.
 paths:
   /api/collections:
     $ref: './paths/collections/list-create.yaml'
@@ -68,6 +70,8 @@ paths:
     $ref: './paths/uploads/abort.yaml'
   /api/profiles/{profileId}/galleries:
     $ref: './paths/profiles/galleries-create.yaml'
+  /api/profiles/{profileSlug}:
+    $ref: './paths/profiles/detail.yaml'
 components:
   securitySchemes:
     bearerAuth:
@@ -97,6 +101,8 @@ components:
       $ref: './components/parameters/galleries/UploadId.yaml'
     ProfileId:
       $ref: './components/parameters/profiles/ProfileId.yaml'
+    ProfileSlug:
+      $ref: './components/parameters/profiles/ProfileSlug.yaml'
   schemas:
     Collection:
       $ref: './components/schemas/collections/Collection.yaml'
@@ -190,6 +196,12 @@ components:
       $ref: './components/schemas/common/MessageError.yaml'
     ValidationError:
       $ref: './components/schemas/common/ValidationError.yaml'
+    NewGalleryPreviewMedia:
+      $ref: './components/schemas/profiles/NewGalleryPreviewMedia.yaml'
+    ProfileDetailResponse:
+      $ref: './components/schemas/profiles/ProfileDetailResponse.yaml'
+    ProfileDetailEnvelope:
+      $ref: './components/schemas/profiles/ProfileDetailEnvelope.yaml'
   responses:
     Unauthorized:
       $ref: './components/responses/common/Unauthorized.yaml'
