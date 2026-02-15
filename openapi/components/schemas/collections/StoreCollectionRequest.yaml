@@ -8,6 +8,11 @@ properties:
   type:
     type: string
     enum: [drive, gallery]
+  profile_id:
+    type: integer
+    minimum: 1
+    description: Required when `type` is `gallery`.
   policy:
     type: object
     additionalProperties: true
+additionalProperties: false

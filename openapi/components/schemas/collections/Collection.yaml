@@ -1,5 +1,5 @@
 type: object
-required: [id, account_id, created_by, type, name, policy, created_at, updated_at, deleted_at]
+required: [id, account_id, created_by, type, name, profile_id, policy, created_at, updated_at, deleted_at]
 properties:
   id:
     type: integer
@@ -17,6 +17,9 @@ properties:
     type: string
     minLength: 1
     maxLength: 255
+  profile_id:
+    type: [integer, 'null']
+    minimum: 1
   policy:
     type: object
     additionalProperties: true

@@ -66,6 +66,8 @@ paths:
     $ref: './paths/uploads/complete-batch.yaml'
   /api/uploads/{uploadId}/abort:
     $ref: './paths/uploads/abort.yaml'
+  /api/profiles/{profileId}/galleries:
+    $ref: './paths/profiles/galleries-create.yaml'
 components:
   securitySchemes:
     bearerAuth:
@@ -93,6 +95,8 @@ components:
       $ref: './components/parameters/galleries/AssetId.yaml'
     UploadId:
       $ref: './components/parameters/galleries/UploadId.yaml'
+    ProfileId:
+      $ref: './components/parameters/profiles/ProfileId.yaml'
   schemas:
     Collection:
       $ref: './components/schemas/collections/Collection.yaml'

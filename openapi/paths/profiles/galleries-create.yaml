@@ -1,0 +1,19 @@
+parameters:
+  - $ref: '../../components/parameters/profiles/ProfileId.yaml'
+post:
+  tags: [Collections]
+  operationId: createGalleryForProfile
+  summary: Create gallery collection for a profile
+  security:
+    - bearerAuth: []
+  responses:
+    '201':
+      description: Gallery collection created
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/collections/CollectionResponse.yaml'
+    '401':
+      $ref: '../../components/responses/common/Unauthorized.yaml'
+    '404':
+      $ref: '../../components/responses/common/NotFound.yaml'

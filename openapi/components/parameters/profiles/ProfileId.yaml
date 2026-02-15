@@ -1,0 +1,7 @@
+name: profileId
+in: path
+required: true
+schema:
+  type: integer
+  minimum: 1
+description: Profile identifier.
