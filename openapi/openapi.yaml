@@ -198,6 +198,8 @@ components:
       $ref: './components/schemas/common/ValidationError.yaml'
     NewGalleryPreviewMedia:
       $ref: './components/schemas/profiles/NewGalleryPreviewMedia.yaml'
+    ProfileNewGalleryPreview:
+      $ref: './components/schemas/profiles/ProfileNewGalleryPreview.yaml'
     ProfileDetailResponse:
       $ref: './components/schemas/profiles/ProfileDetailResponse.yaml'
     ProfileDetailEnvelope:

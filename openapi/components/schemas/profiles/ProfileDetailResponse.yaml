@@ -11,5 +11,5 @@ properties:
   new_galleries:
     type: array
     items:
-      $ref: './NewGalleryPreviewMedia.yaml'
+      $ref: './ProfileNewGalleryPreview.yaml'
 additionalProperties: true

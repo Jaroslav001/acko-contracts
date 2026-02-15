@@ -1,0 +1,11 @@
+type: object
+required: [id, media]
+properties:
+  id:
+    type: integer
+    minimum: 1
+  media:
+    type: array
+    items:
+      $ref: './NewGalleryPreviewMedia.yaml'
+additionalProperties: false
