@@ -1,5 +1,5 @@
 type: object
-required: [thumb, url]
+required: [thumb, url, poster, mime_type]
 properties:
   thumb:
     type: [string, 'null']
@@ -7,4 +7,9 @@ properties:
   url:
     type: [string, 'null']
     format: uri
+  poster:
+    type: [string, 'null']
+    format: uri
+  mime_type:
+    type: [string, 'null']
 additionalProperties: false
