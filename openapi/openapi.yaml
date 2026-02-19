@@ -74,6 +74,10 @@ paths:
     $ref: './paths/profiles/detail.yaml'
   /api/profiles/{profileSlug}/viewer-state:
     $ref: './paths/profiles/viewer-state.yaml'
+  /api/profiles/top:
+    $ref: './paths/profiles/top.yaml'
+  /api/profiles/favorite:
+    $ref: './paths/profiles/favorite.yaml'
 components:
   securitySchemes:
     bearerAuth:
@@ -208,6 +212,12 @@ components:
       $ref: './components/schemas/profiles/ProfileDetailEnvelope.yaml'
     ProfileViewerStateResponse:
       $ref: './components/schemas/profiles/ProfileViewerStateResponse.yaml'
+    ProfileListItem:
+      $ref: './components/schemas/profiles/ProfileListItem.yaml'
+    TopProfilesResponse:
+      $ref: './components/schemas/profiles/TopProfilesResponse.yaml'
+    FavoriteProfilesResponse:
+      $ref: './components/schemas/profiles/FavoriteProfilesResponse.yaml'
   responses:
     Unauthorized:
       $ref: './components/responses/common/Unauthorized.yaml'

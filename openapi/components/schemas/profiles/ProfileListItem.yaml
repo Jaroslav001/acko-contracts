@@ -1,0 +1,28 @@
+type: object
+required:
+  - id
+  - name
+  - slug
+  - age
+  - city
+  - title_image
+  - is_premium
+properties:
+  id:
+    type: integer
+    minimum: 1
+  name:
+    type: string
+  slug:
+    type: string
+  age:
+    type: [integer, 'null']
+    minimum: 1
+  city:
+    type: [string, 'null']
+  title_image:
+    type: [string, 'null']
+    format: uri
+  is_premium:
+    type: boolean
+additionalProperties: false

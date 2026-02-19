@@ -1,0 +1,13 @@
+type: object
+required:
+  - profiles
+  - duration
+properties:
+  profiles:
+    type: array
+    items:
+      $ref: './ProfileListItem.yaml'
+  duration:
+    type: number
+    format: float
+additionalProperties: false

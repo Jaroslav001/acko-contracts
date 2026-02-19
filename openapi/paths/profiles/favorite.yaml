@@ -1,0 +1,15 @@
+get:
+  tags: [Profiles]
+  operationId: getFavoriteProfiles
+  summary: Get current user's favorite profiles
+  security:
+    - bearerAuth: []
+  responses:
+    '200':
+      description: Favorite profiles payload
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/profiles/FavoriteProfilesResponse.yaml'
+    '401':
+      $ref: '../../components/responses/common/Unauthorized.yaml'

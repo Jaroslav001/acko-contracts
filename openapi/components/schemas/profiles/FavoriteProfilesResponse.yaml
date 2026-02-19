@@ -1,0 +1,13 @@
+type: object
+required:
+  - favorite_profiles
+  - duration
+properties:
+  favorite_profiles:
+    type: array
+    items:
+      $ref: './ProfileListItem.yaml'
+  duration:
+    type: number
+    format: float
+additionalProperties: false

@@ -4,6 +4,7 @@ get:
   tags: [Profiles]
   operationId: getProfileBySlug
   summary: Get public profile detail with galleries
+  security: []
   responses:
     '200':
       description: Profile detail
