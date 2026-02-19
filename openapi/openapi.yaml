@@ -72,6 +72,8 @@ paths:
     $ref: './paths/profiles/galleries-create.yaml'
   /api/profiles/{profileSlug}:
     $ref: './paths/profiles/detail.yaml'
+  /api/profiles/{profileSlug}/viewer-state:
+    $ref: './paths/profiles/viewer-state.yaml'
 components:
   securitySchemes:
     bearerAuth:
@@ -204,6 +206,8 @@ components:
       $ref: './components/schemas/profiles/ProfileDetailResponse.yaml'
     ProfileDetailEnvelope:
       $ref: './components/schemas/profiles/ProfileDetailEnvelope.yaml'
+    ProfileViewerStateResponse:
+      $ref: './components/schemas/profiles/ProfileViewerStateResponse.yaml'
   responses:
     Unauthorized:
       $ref: './components/responses/common/Unauthorized.yaml'

@@ -3,9 +3,7 @@ parameters:
 get:
   tags: [Profiles]
   operationId: getProfileBySlug
-  summary: Get profile detail with new galleries
-  security:
-    - bearerAuth: []
+  summary: Get public profile detail with galleries
   responses:
     '200':
       description: Profile detail
@@ -13,7 +11,5 @@ get:
         application/json:
           schema:
             $ref: '../../components/schemas/profiles/ProfileDetailEnvelope.yaml'
-    '401':
-      $ref: '../../components/responses/common/Unauthorized.yaml'
     '404':
       $ref: '../../components/responses/common/NotFound.yaml'

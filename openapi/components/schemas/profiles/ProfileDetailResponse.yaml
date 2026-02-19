@@ -1,15 +1,192 @@
 type: object
-required: [id, slug, new_galleries]
+required:
+  - id
+  - account_id
+  - created_by
+  - name
+  - slug
+  - age
+  - height
+  - weight
+  - breast_size
+  - location_id
+  - phone
+  - is_wa_user
+  - is_premium
+  - status
+  - description
+  - top_count
+  - top_at
+  - created_at
+  - updated_at
+  - deleted_at
+  - posts
+  - city
+  - region
+  - location
+  - title_image
+  - title_image_original
+  - cover_image
+  - cover_image_original
+  - videos
+  - parsed_phone
+  - phone_country
+  - new_galleries
 properties:
   id:
     type: integer
+    minimum: 1
+  account_id:
+    type: integer
+    minimum: 1
+  created_by:
+    type: [integer, 'null']
     minimum: 1
   slug:
     type: string
   name:
     type: string
+  age:
+    type: [integer, 'null']
+    minimum: 1
+  height:
+    type: [integer, 'null']
+    minimum: 1
+  weight:
+    type: [integer, 'null']
+    minimum: 1
+  breast_size:
+    type: [integer, 'null']
+    minimum: 1
+  location_id:
+    type: integer
+  phone:
+    type: string
+  is_wa_user:
+    type: boolean
+  is_premium:
+    type: boolean
+  status:
+    type: string
+  description:
+    type: [string, 'null']
+  top_count:
+    type: integer
+    minimum: 0
+  top_at:
+    type: [string, 'null']
+    format: date-time
+  created_at:
+    type: [string, 'null']
+    format: date-time
+  updated_at:
+    type: [string, 'null']
+    format: date-time
+  deleted_at:
+    type: [string, 'null']
+    format: date-time
+  posts:
+    type: array
+    items:
+      type: object
+      required: [id, media]
+      properties:
+        id:
+          type: integer
+          minimum: 1
+        media:
+          type: array
+          items:
+            type: object
+            required: [thumbnail, original, media_uuid, media_id, mime_type, order_column]
+            properties:
+              thumbnail:
+                type: [string, 'null']
+                format: uri
+              original:
+                type: [string, 'null']
+                format: uri
+              media_uuid:
+                type: string
+              media_id:
+                type: integer
+                minimum: 1
+              mime_type:
+                type: string
+              order_column:
+                type: [integer, 'null']
+            additionalProperties: false
+      additionalProperties: false
+  city:
+    type: [string, 'null']
+  region:
+    type: [string, 'null']
+  location:
+    type: [string, 'null']
+  title_image:
+    type: [string, 'null']
+    format: uri
+  title_image_original:
+    type: [string, 'null']
+    format: uri
+  cover_image:
+    type: [string, 'null']
+    format: uri
+  cover_image_original:
+    type: [string, 'null']
+    format: uri
+  videos:
+    type: object
+    required: [model_type, model_id, collection_name, data]
+    properties:
+      model_type:
+        type: [string, 'null']
+      model_id:
+        type: [integer, 'null']
+      collection_name:
+        type: [string, 'null']
+      data:
+        type: array
+        items:
+          type: object
+          required: [id, uuid, mime_type, order_column, url, thumb]
+          properties:
+            id:
+              type: integer
+              minimum: 1
+            uuid:
+              type: string
+            mime_type:
+              type: [string, 'null']
+            order_column:
+              type: [integer, 'null']
+            url:
+              type: [string, 'null']
+              format: uri
+            thumb:
+              type: [string, 'null']
+              format: uri
+          additionalProperties: false
+    additionalProperties: false
+  parsed_phone:
+    type: object
+    required: [value, value_formated, country_code, number, country]
+    properties:
+      value:
+        type: string
+      value_formated:
+        type: string
+      country_code:
+        type: string
+      number:
+        type: string
+      country:
+        type: string
+    additionalProperties: false
+  phone_country:
+    type: string
   new_galleries:
     type: array
     items:
       $ref: './ProfileNewGalleryPreview.yaml'
-additionalProperties: true
+additionalProperties: false

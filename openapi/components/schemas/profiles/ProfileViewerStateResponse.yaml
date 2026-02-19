@@ -1,0 +1,8 @@
+type: object
+required: [can_edit, is_favorite]
+properties:
+  can_edit:
+    type: boolean
+  is_favorite:
+    type: boolean
+additionalProperties: false
