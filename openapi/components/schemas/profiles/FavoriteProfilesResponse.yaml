@@ -6,7 +6,7 @@ properties:
   favorite_profiles:
     type: array
     items:
-      $ref: './ProfileListItem.yaml'
+      $ref: './ProfileCardItem.yaml'
   duration:
     type: number
     format: float

@@ -16,13 +16,12 @@ properties:
   slug:
     type: string
   age:
-    type: [integer, 'null']
-    minimum: 1
+    type: integer
+    minimum: 0
   city:
-    type: [string, 'null']
+    type: string
   title_image:
-    type: [string, 'null']
-    format: uri
+    type: string
   is_premium:
     type: boolean
 additionalProperties: false

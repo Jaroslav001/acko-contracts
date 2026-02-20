@@ -212,8 +212,8 @@ components:
       $ref: './components/schemas/profiles/ProfileDetailEnvelope.yaml'
     ProfileViewerStateResponse:
       $ref: './components/schemas/profiles/ProfileViewerStateResponse.yaml'
-    ProfileListItem:
-      $ref: './components/schemas/profiles/ProfileListItem.yaml'
+    ProfileCardItem:
+      $ref: './components/schemas/profiles/ProfileCardItem.yaml'
     TopProfilesResponse:
       $ref: './components/schemas/profiles/TopProfilesResponse.yaml'
     FavoriteProfilesResponse:
