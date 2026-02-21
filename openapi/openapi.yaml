@@ -68,6 +68,8 @@ paths:
     $ref: './paths/uploads/complete-batch.yaml'
   /api/uploads/{uploadId}/abort:
     $ref: './paths/uploads/abort.yaml'
+  /api/profiles:
+    $ref: './paths/profiles/list.yaml'
   /api/profiles/{profileId}/galleries:
     $ref: './paths/profiles/galleries-create.yaml'
   /api/profiles/{profileSlug}:
@@ -214,6 +216,8 @@ components:
       $ref: './components/schemas/profiles/ProfileViewerStateResponse.yaml'
     ProfileCardItem:
       $ref: './components/schemas/profiles/ProfileCardItem.yaml'
+    ProfileCursorListResponse:
+      $ref: './components/schemas/profiles/ProfileCursorListResponse.yaml'
     TopProfilesResponse:
       $ref: './components/schemas/profiles/TopProfilesResponse.yaml'
     FavoriteProfilesResponse:

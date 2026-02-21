@@ -1,0 +1,61 @@
+get:
+  tags: [Profiles]
+  operationId: listProfiles
+  summary: List public profiles using cursor pagination
+  security: []
+  parameters:
+    - name: cursor
+      in: query
+      required: false
+      description: >
+        Opaque cursor returned by the previous response. Omit for the first page.
+      schema:
+        type: string
+    - name: limit
+      in: query
+      required: false
+      description: Number of profiles to return.
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 100
+        default: 48
+    - name: sort
+      in: query
+      required: false
+      description: Sort key for profile listing.
+      schema:
+        type: string
+        enum: [top, newest, youngest, oldest]
+        default: top
+    - name: status
+      in: query
+      required: false
+      description: Profile status filter.
+      schema:
+        type: string
+    - name: location
+      in: query
+      required: false
+      description: Location slug filter.
+      schema:
+        type: string
+    - name: age
+      in: query
+      required: false
+      description: >
+        Age filter. Supports a single number or range shorthand, for example `from18to25`.
+      schema:
+        oneOf:
+          - type: integer
+            minimum: 1
+          - type: string
+  responses:
+    '200':
+      description: Cursor-paginated profiles payload
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/profiles/ProfileCursorListResponse.yaml'
+    '422':
+      $ref: '../../components/responses/common/ValidationError.yaml'

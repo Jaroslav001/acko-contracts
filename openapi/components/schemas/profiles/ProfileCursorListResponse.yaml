@@ -1,0 +1,32 @@
+type: object
+required:
+  - data
+  - next_cursor
+  - has_more
+  - applied_filters
+  - applied_filters_count
+  - duration
+properties:
+  data:
+    type: array
+    items:
+      $ref: './ProfileCardItem.yaml'
+  next_cursor:
+    type: [string, 'null']
+    description: Opaque cursor value for requesting the next page.
+  has_more:
+    type: boolean
+    description: True when there are more profiles available after this page.
+  applied_filters:
+    type: array
+    description: Human-readable filters applied to this listing.
+    items:
+      type: object
+      additionalProperties: true
+  applied_filters_count:
+    type: integer
+    minimum: 0
+  duration:
+    type: number
+    format: float
+additionalProperties: false
