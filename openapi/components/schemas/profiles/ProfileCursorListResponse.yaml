@@ -3,9 +3,6 @@ required:
   - data
   - next_cursor
   - has_more
-  - applied_filters
-  - applied_filters_count
-  - duration
 properties:
   data:
     type: array

@@ -20,6 +20,13 @@ get:
         minimum: 1
         maximum: 100
         default: 48
+    - name: include_meta
+      in: query
+      required: false
+      description: Include applied filters and duration metadata in response.
+      schema:
+        type: boolean
+        default: true
     - name: sort
       in: query
       required: false
