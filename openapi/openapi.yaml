@@ -218,6 +218,10 @@ components:
       $ref: './components/schemas/profiles/ProfileCardItem.yaml'
     ProfileCursorListResponse:
       $ref: './components/schemas/profiles/ProfileCursorListResponse.yaml'
+    ProfileUpdateRequest:
+      $ref: './components/schemas/profiles/ProfileUpdateRequest.yaml'
+    ProfileUpdateEnvelope:
+      $ref: './components/schemas/profiles/ProfileUpdateEnvelope.yaml'
     TopProfilesResponse:
       $ref: './components/schemas/profiles/TopProfilesResponse.yaml'
     FavoriteProfilesResponse:

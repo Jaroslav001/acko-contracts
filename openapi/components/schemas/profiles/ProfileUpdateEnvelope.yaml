@@ -1,0 +1,20 @@
+type: object
+required: [data]
+properties:
+  data:
+    type: object
+    properties:
+      id:
+        type: integer
+        minimum: 1
+      title_image_id:
+        type: [integer, 'null']
+      title_image_url:
+        type: [string, 'null']
+        format: uri
+      title_image:
+        type: [string, 'null']
+        format: uri
+    additionalProperties: true
+additionalProperties: false
+

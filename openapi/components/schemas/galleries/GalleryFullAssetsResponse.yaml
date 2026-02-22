@@ -5,10 +5,14 @@ properties:
     type: object
     required:
       - gallery_id
+      - profile_title_image_id
       - items
     properties:
       gallery_id:
         type: integer
+        minimum: 1
+      profile_title_image_id:
+        type: [integer, 'null']
         minimum: 1
       items:
         type: array

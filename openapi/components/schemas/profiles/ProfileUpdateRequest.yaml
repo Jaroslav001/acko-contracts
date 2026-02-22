@@ -1,0 +1,21 @@
+type: object
+properties:
+  name:
+    type: string
+    minLength: 3
+  status:
+    type: string
+  is_premium:
+    type: boolean
+  location_id:
+    type: integer
+    minimum: 1
+  title_image_id:
+    type: [integer, 'null']
+    minimum: 1
+  title_image_url:
+    type: [string, 'null']
+    format: uri
+    maxLength: 2048
+additionalProperties: false
+

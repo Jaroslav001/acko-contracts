@@ -14,3 +14,26 @@ get:
             $ref: '../../components/schemas/profiles/ProfileDetailEnvelope.yaml'
     '404':
       $ref: '../../components/responses/common/NotFound.yaml'
+post:
+  tags: [Profiles]
+  operationId: updateProfile
+  summary: Update profile fields
+  security:
+    - bearerAuth: []
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '../../components/schemas/profiles/ProfileUpdateRequest.yaml'
+  responses:
+    '200':
+      description: Updated profile payload
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/profiles/ProfileUpdateEnvelope.yaml'
+    '401':
+      $ref: '../../components/responses/common/Unauthorized.yaml'
+    '422':
+      $ref: '../../components/responses/common/ValidationError.yaml'
