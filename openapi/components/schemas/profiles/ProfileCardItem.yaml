@@ -7,6 +7,7 @@ required:
   - city
   - title_image
   - is_premium
+  - is_verified
 properties:
   id:
     type: integer
@@ -23,5 +24,7 @@ properties:
   title_image:
     type: string
   is_premium:
+    type: boolean
+  is_verified:
     type: boolean
 additionalProperties: false
