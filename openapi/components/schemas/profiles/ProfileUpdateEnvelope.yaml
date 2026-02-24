@@ -12,9 +12,5 @@ properties:
       title_image_url:
         type: [string, 'null']
         format: uri
-      title_image:
-        type: [string, 'null']
-        format: uri
     additionalProperties: true
 additionalProperties: false
-

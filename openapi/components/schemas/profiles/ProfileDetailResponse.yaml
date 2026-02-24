@@ -21,14 +21,10 @@ required:
   - created_at
   - updated_at
   - deleted_at
-  - posts
   - city
   - region
   - location
   - title_image
-  - title_image_original
-  - cover_image
-  - cover_image_original
   - videos
   - parsed_phone
   - phone_country
@@ -88,38 +84,6 @@ properties:
   deleted_at:
     type: [string, 'null']
     format: date-time
-  posts:
-    type: array
-    items:
-      type: object
-      required: [id, media]
-      properties:
-        id:
-          type: integer
-          minimum: 1
-        media:
-          type: array
-          items:
-            type: object
-            required: [thumbnail, original, media_uuid, media_id, mime_type, order_column]
-            properties:
-              thumbnail:
-                type: [string, 'null']
-                format: uri
-              original:
-                type: [string, 'null']
-                format: uri
-              media_uuid:
-                type: string
-              media_id:
-                type: integer
-                minimum: 1
-              mime_type:
-                type: string
-              order_column:
-                type: [integer, 'null']
-            additionalProperties: false
-      additionalProperties: false
   city:
     type: [string, 'null']
   region:
@@ -127,15 +91,6 @@ properties:
   location:
     type: [string, 'null']
   title_image:
-    type: [string, 'null']
-    format: uri
-  title_image_original:
-    type: [string, 'null']
-    format: uri
-  cover_image:
-    type: [string, 'null']
-    format: uri
-  cover_image_original:
     type: [string, 'null']
     format: uri
   videos:
