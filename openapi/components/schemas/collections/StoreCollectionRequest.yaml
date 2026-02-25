@@ -1,8 +1,8 @@
 type: object
-required: [name, type]
+required: [type]
 properties:
   name:
-    type: string
+    type: [string, 'null']
     minLength: 1
     maxLength: 255
   type:

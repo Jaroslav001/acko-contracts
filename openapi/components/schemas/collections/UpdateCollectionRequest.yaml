@@ -1,7 +1,7 @@
 type: object
 properties:
   name:
-    type: string
+    type: [string, 'null']
     minLength: 1
     maxLength: 255
   type:

@@ -14,7 +14,7 @@ properties:
     type: string
     enum: [drive, gallery]
   name:
-    type: string
+    type: [string, 'null']
     minLength: 1
     maxLength: 255
   profile_id:
