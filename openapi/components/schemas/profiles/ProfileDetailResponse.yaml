@@ -25,7 +25,6 @@ required:
   - region
   - location
   - title_image
-  - videos
   - parsed_phone
   - phone_country
   - new_galleries
@@ -93,39 +92,6 @@ properties:
   title_image:
     type: [string, 'null']
     format: uri
-  videos:
-    type: object
-    required: [model_type, model_id, collection_name, data]
-    properties:
-      model_type:
-        type: [string, 'null']
-      model_id:
-        type: [integer, 'null']
-      collection_name:
-        type: [string, 'null']
-      data:
-        type: array
-        items:
-          type: object
-          required: [id, uuid, mime_type, order_column, url, thumb]
-          properties:
-            id:
-              type: integer
-              minimum: 1
-            uuid:
-              type: string
-            mime_type:
-              type: [string, 'null']
-            order_column:
-              type: [integer, 'null']
-            url:
-              type: [string, 'null']
-              format: uri
-            thumb:
-              type: [string, 'null']
-              format: uri
-          additionalProperties: false
-    additionalProperties: false
   parsed_phone:
     type: object
     required: [value, value_formated, country_code, number, country]
