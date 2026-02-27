@@ -3,8 +3,8 @@ info:
   title: Collections and Galleries API
   version: 0.1.0
   description: |
-    Initial API contract for Collections domain.
-    Scope is limited to `/api/collections` endpoints.
+    Contract-first API for collections, galleries, uploads, and profiles.
+    Runtime endpoints must be represented here.
   license:
     name: Proprietary
     identifier: LicenseRef-Proprietary
