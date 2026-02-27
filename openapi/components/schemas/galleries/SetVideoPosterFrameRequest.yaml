@@ -1,0 +1,8 @@
+type: object
+required:
+  - frame_index
+properties:
+  frame_index:
+    type: integer
+    minimum: 0
+additionalProperties: false

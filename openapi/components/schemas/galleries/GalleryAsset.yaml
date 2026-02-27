@@ -46,6 +46,14 @@ properties:
     additionalProperties:
       type: string
       format: uri
+  video:
+    anyOf:
+      - $ref: './GalleryVideoMeta.yaml'
+      - type: 'null'
+  poster_frame:
+    anyOf:
+      - $ref: './GalleryPosterFrameMeta.yaml'
+      - type: 'null'
   error_message:
     anyOf:
       - type: string

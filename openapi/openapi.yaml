@@ -52,6 +52,8 @@ paths:
     $ref: './paths/galleries/fullassets-reorder.yaml'
   /api/galleries/{galleryId}/fullassets/{assetId}:
     $ref: './paths/galleries/fullassets-detail.yaml'
+  /api/galleries/{galleryId}/fullassets/{assetId}/poster-frame:
+    $ref: './paths/galleries/fullassets-poster-frame.yaml'
   /api/galleries/{galleryId}/uploads/initiate:
     $ref: './paths/galleries/uploads-initiate.yaml'
   /api/galleries/{galleryId}/uploads/{uploadId}:
@@ -184,6 +186,10 @@ components:
       $ref: './components/schemas/galleries/GalleryMinViewResponse.yaml'
     GalleryAsset:
       $ref: './components/schemas/galleries/GalleryAsset.yaml'
+    GalleryVideoMeta:
+      $ref: './components/schemas/galleries/GalleryVideoMeta.yaml'
+    GalleryPosterFrameMeta:
+      $ref: './components/schemas/galleries/GalleryPosterFrameMeta.yaml'
     GalleryAssetStatus:
       $ref: './components/schemas/galleries/GalleryAssetStatus.yaml'
     GalleryAssetStatusesRequest:
@@ -214,6 +220,10 @@ components:
       $ref: './components/schemas/galleries/CompleteGalleryUploadRequest.yaml'
     CompleteGalleryUploadResponse:
       $ref: './components/schemas/galleries/CompleteGalleryUploadResponse.yaml'
+    SetVideoPosterFrameRequest:
+      $ref: './components/schemas/galleries/SetVideoPosterFrameRequest.yaml'
+    SetVideoPosterFrameResponse:
+      $ref: './components/schemas/galleries/SetVideoPosterFrameResponse.yaml'
     InitiateUploadRequest:
       $ref: './components/schemas/uploads/InitiateUploadRequest.yaml'
     InitiateUploadBatchItem:

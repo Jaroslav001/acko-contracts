@@ -1,0 +1,25 @@
+type: object
+required: [data]
+properties:
+  data:
+    type: object
+    required:
+      - asset_id
+      - poster_frame
+      - video
+      - conversions
+    properties:
+      asset_id:
+        type: integer
+        minimum: 1
+      poster_frame:
+        $ref: './GalleryPosterFrameMeta.yaml'
+      video:
+        $ref: './GalleryVideoMeta.yaml'
+      conversions:
+        type: object
+        additionalProperties:
+          type: string
+          format: uri
+    additionalProperties: false
+additionalProperties: false
