@@ -1,0 +1,25 @@
+type: object
+required:
+  - type
+  - status
+  - conversions
+properties:
+  type:
+    type: string
+    enum: [logged_in]
+  status:
+    type: string
+    enum: [processing, ready, failed]
+  conversions:
+    type: object
+    minProperties: 1
+    additionalProperties:
+      type: string
+      format: uri
+  error_message:
+    anyOf:
+      - type: string
+        minLength: 1
+        maxLength: 1000
+      - type: 'null'
+additionalProperties: false

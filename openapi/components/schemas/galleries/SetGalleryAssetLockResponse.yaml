@@ -1,0 +1,24 @@
+type: object
+required: [data]
+properties:
+  data:
+    type: object
+    required:
+      - asset_id
+      - lock
+      - conversions
+    properties:
+      asset_id:
+        type: integer
+        minimum: 1
+      lock:
+        anyOf:
+          - $ref: './GalleryAssetLockMeta.yaml'
+          - type: 'null'
+      conversions:
+        type: object
+        additionalProperties:
+          type: string
+          format: uri
+    additionalProperties: false
+additionalProperties: false

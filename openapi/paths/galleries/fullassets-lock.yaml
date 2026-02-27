@@ -1,0 +1,47 @@
+parameters:
+  - $ref: '../../components/parameters/galleries/GalleryId.yaml'
+  - $ref: '../../components/parameters/galleries/AssetId.yaml'
+post:
+  tags: [Galleries]
+  operationId: setGalleryAssetLock
+  summary: Lock gallery asset with configured access rule
+  security:
+    - bearerAuth: []
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '../../components/schemas/galleries/SetGalleryAssetLockRequest.yaml'
+  responses:
+    '200':
+      description: Gallery asset lock updated
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/galleries/SetGalleryAssetLockResponse.yaml'
+    '401':
+      $ref: '../../components/responses/common/Unauthorized.yaml'
+    '404':
+      $ref: '../../components/responses/common/NotFound.yaml'
+    '422':
+      $ref: '../../components/responses/common/ValidationError.yaml'
+delete:
+  tags: [Galleries]
+  operationId: resetGalleryAssetLock
+  summary: Remove lock from gallery asset
+  security:
+    - bearerAuth: []
+  responses:
+    '200':
+      description: Gallery asset lock removed
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/galleries/SetGalleryAssetLockResponse.yaml'
+    '401':
+      $ref: '../../components/responses/common/Unauthorized.yaml'
+    '404':
+      $ref: '../../components/responses/common/NotFound.yaml'
+    '422':
+      $ref: '../../components/responses/common/ValidationError.yaml'

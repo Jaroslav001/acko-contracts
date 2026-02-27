@@ -19,6 +19,10 @@ properties:
     anyOf:
       - $ref: './GalleryPosterFrameMeta.yaml'
       - type: 'null'
+  lock:
+    anyOf:
+      - $ref: './GalleryAssetLockMeta.yaml'
+      - type: 'null'
   error_message:
     anyOf:
       - type: string

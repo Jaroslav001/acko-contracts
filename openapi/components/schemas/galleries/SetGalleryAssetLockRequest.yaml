@@ -1,0 +1,8 @@
+type: object
+required:
+  - type
+properties:
+  type:
+    type: string
+    enum: [logged_in]
+additionalProperties: false

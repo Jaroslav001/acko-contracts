@@ -54,6 +54,8 @@ paths:
     $ref: './paths/galleries/fullassets-detail.yaml'
   /api/galleries/{galleryId}/fullassets/{assetId}/poster-frame:
     $ref: './paths/galleries/fullassets-poster-frame.yaml'
+  /api/galleries/{galleryId}/fullassets/{assetId}/lock:
+    $ref: './paths/galleries/fullassets-lock.yaml'
   /api/galleries/{galleryId}/uploads/initiate:
     $ref: './paths/galleries/uploads-initiate.yaml'
   /api/galleries/{galleryId}/uploads/{uploadId}:
@@ -190,6 +192,8 @@ components:
       $ref: './components/schemas/galleries/GalleryVideoMeta.yaml'
     GalleryPosterFrameMeta:
       $ref: './components/schemas/galleries/GalleryPosterFrameMeta.yaml'
+    GalleryAssetLockMeta:
+      $ref: './components/schemas/galleries/GalleryAssetLockMeta.yaml'
     GalleryAssetStatus:
       $ref: './components/schemas/galleries/GalleryAssetStatus.yaml'
     GalleryAssetStatusesRequest:
@@ -224,6 +228,10 @@ components:
       $ref: './components/schemas/galleries/SetVideoPosterFrameRequest.yaml'
     SetVideoPosterFrameResponse:
       $ref: './components/schemas/galleries/SetVideoPosterFrameResponse.yaml'
+    SetGalleryAssetLockRequest:
+      $ref: './components/schemas/galleries/SetGalleryAssetLockRequest.yaml'
+    SetGalleryAssetLockResponse:
+      $ref: './components/schemas/galleries/SetGalleryAssetLockResponse.yaml'
     InitiateUploadRequest:
       $ref: './components/schemas/uploads/InitiateUploadRequest.yaml'
     InitiateUploadBatchItem:
