@@ -1,0 +1,13 @@
+type: object
+required: [data, links, meta]
+properties:
+  data:
+    type: array
+    items:
+      $ref: './File.yaml'
+  links:
+    type: object
+    additionalProperties: true
+  meta:
+    type: object
+    additionalProperties: true

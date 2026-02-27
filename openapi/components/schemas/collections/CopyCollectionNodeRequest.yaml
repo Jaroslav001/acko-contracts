@@ -1,0 +1,16 @@
+type: object
+required: [mode]
+properties:
+  destination_parent_id:
+    anyOf:
+      - type: integer
+        minimum: 1
+      - type: 'null'
+  mode:
+    type: string
+    enum: [reuse, clone]
+  display_name:
+    type: string
+    minLength: 1
+    maxLength: 255
+additionalProperties: false

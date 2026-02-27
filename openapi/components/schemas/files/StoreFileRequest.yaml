@@ -1,9 +1,6 @@
 type: object
+required: [original_name]
 properties:
-  id:
-    type: integer
-  file_id:
-    type: integer
   disk:
     type: string
     maxLength: 50
@@ -24,9 +21,8 @@ properties:
     type: [string, 'null']
     maxLength: 255
   status:
-    type: string
+    type: [string, 'null']
     maxLength: 100
-    default: ready
   metadata:
     type: object
     additionalProperties: true

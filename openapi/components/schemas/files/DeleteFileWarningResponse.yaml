@@ -1,0 +1,17 @@
+type: object
+required: [data]
+properties:
+  data:
+    type: object
+    required: [deleted, warnings, detached_profiles]
+    properties:
+      deleted:
+        type: boolean
+        const: true
+      warnings:
+        type: array
+        items:
+          type: string
+      detached_profiles:
+        type: integer
+        minimum: 0

@@ -1,16 +1,5 @@
 type: object
 properties:
-  id:
-    type: integer
-  file_id:
-    type: integer
-  disk:
-    type: string
-    maxLength: 50
-    default: s3
-  storage_key:
-    type: string
-    maxLength: 1024
   original_name:
     type: string
     maxLength: 255
@@ -24,9 +13,9 @@ properties:
     type: [string, 'null']
     maxLength: 255
   status:
-    type: string
+    type: [string, 'null']
     maxLength: 100
-    default: ready
   metadata:
     type: object
     additionalProperties: true
+additionalProperties: false

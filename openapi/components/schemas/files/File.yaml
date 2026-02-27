@@ -1,13 +1,15 @@
 type: object
+required: [id, account_id, disk, storage_key, original_name, size_bytes, status, metadata, created_at, updated_at]
 properties:
   id:
     type: integer
-  file_id:
+  account_id:
     type: integer
+  created_by:
+    type: [integer, 'null']
   disk:
     type: string
     maxLength: 50
-    default: s3
   storage_key:
     type: string
     maxLength: 1024
@@ -26,7 +28,10 @@ properties:
   status:
     type: string
     maxLength: 100
-    default: ready
   metadata:
     type: object
     additionalProperties: true
+  created_at:
+    type: [string, 'null']
+  updated_at:
+    type: [string, 'null']

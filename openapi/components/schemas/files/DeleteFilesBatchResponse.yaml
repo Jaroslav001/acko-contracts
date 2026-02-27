@@ -1,0 +1,28 @@
+type: object
+required: [data]
+properties:
+  data:
+    type: object
+    required: [items]
+    properties:
+      items:
+        type: array
+        items:
+          type: object
+          required: [id, deleted, status_code]
+          properties:
+            id:
+              type: integer
+            deleted:
+              type: boolean
+            status_code:
+              type: integer
+            warnings:
+              type: array
+              items:
+                type: string
+            detached_profiles:
+              type: integer
+              minimum: 0
+            error:
+              type: string

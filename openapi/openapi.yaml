@@ -13,6 +13,8 @@ servers:
 tags:
   - name: Collections
     description: Resource collections and their nodes.
+  - name: Files
+    description: Universal file registry and metadata management.
   - name: Galleries
     description: Simplified gallery read models for media display.
   - name: Profiles
@@ -28,8 +30,18 @@ paths:
     $ref: './paths/collections/node-detail.yaml'
   /api/collections/{id}/nodes/{nodeId}/move:
     $ref: './paths/collections/node-move.yaml'
+  /api/collections/{id}/nodes/{nodeId}/copy:
+    $ref: './paths/collections/node-copy.yaml'
   /api/collections/{id}/nodes/reorder:
     $ref: './paths/collections/nodes-reorder.yaml'
+  /api/files:
+    $ref: './paths/files/list-create.yaml'
+  /api/files/delete-batch:
+    $ref: './paths/files/delete-batch.yaml'
+  /api/files/{id}:
+    $ref: './paths/files/detail.yaml'
+  /api/files/{id}/usage:
+    $ref: './paths/files/usage.yaml'
   /api/galleries/{galleryId}/minview:
     $ref: './paths/galleries/minview.yaml'
   /api/galleries/{galleryId}/fullassets:
@@ -111,6 +123,8 @@ components:
       $ref: './components/parameters/profiles/ProfileId.yaml'
     ProfileSlug:
       $ref: './components/parameters/profiles/ProfileSlug.yaml'
+    FileId:
+      $ref: './components/parameters/files/FileId.yaml'
   schemas:
     Collection:
       $ref: './components/schemas/collections/Collection.yaml'
@@ -138,8 +152,28 @@ components:
       $ref: './components/schemas/collections/UpdateCollectionNodeRequest.yaml'
     MoveCollectionNodeRequest:
       $ref: './components/schemas/collections/MoveCollectionNodeRequest.yaml'
+    CopyCollectionNodeRequest:
+      $ref: './components/schemas/collections/CopyCollectionNodeRequest.yaml'
     ReorderCollectionNodesRequest:
       $ref: './components/schemas/collections/ReorderCollectionNodesRequest.yaml'
+    File:
+      $ref: './components/schemas/files/File.yaml'
+    FileResponse:
+      $ref: './components/schemas/files/FileResponse.yaml'
+    FileListResponse:
+      $ref: './components/schemas/files/FileListResponse.yaml'
+    StoreFileRequest:
+      $ref: './components/schemas/files/StoreFileRequest.yaml'
+    UpdateFileRequest:
+      $ref: './components/schemas/files/UpdateFileRequest.yaml'
+    DeleteFileWarningResponse:
+      $ref: './components/schemas/files/DeleteFileWarningResponse.yaml'
+    DeleteFilesBatchRequest:
+      $ref: './components/schemas/files/DeleteFilesBatchRequest.yaml'
+    DeleteFilesBatchResponse:
+      $ref: './components/schemas/files/DeleteFilesBatchResponse.yaml'
+    FileUsageResponse:
+      $ref: './components/schemas/files/FileUsageResponse.yaml'
     GalleryMinView:
       $ref: './components/schemas/galleries/GalleryMinView.yaml'
     GalleryMinViewItem:

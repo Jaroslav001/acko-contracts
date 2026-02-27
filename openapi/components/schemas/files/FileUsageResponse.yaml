@@ -1,0 +1,48 @@
+type: object
+required: [data]
+properties:
+  data:
+    type: object
+    required: [file_id, collection_node_references, file_links, summary]
+    properties:
+      file_id:
+        type: integer
+      collection_node_references:
+        type: array
+        items:
+          type: object
+          required: [node_id, collection_id, display_name]
+          properties:
+            node_id:
+              type: integer
+            collection_id:
+              type: integer
+            display_name:
+              type: string
+      file_links:
+        type: array
+        items:
+          type: object
+          required: [id, entity_type, entity_id, role, metadata]
+          properties:
+            id:
+              type: integer
+            entity_type:
+              type: string
+            entity_id:
+              type: integer
+            role:
+              type: string
+            metadata:
+              type: object
+              additionalProperties: true
+      summary:
+        type: object
+        required: [collection_node_references_count, file_links_count]
+        properties:
+          collection_node_references_count:
+            type: integer
+            minimum: 0
+          file_links_count:
+            type: integer
+            minimum: 0

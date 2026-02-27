@@ -1,0 +1,65 @@
+parameters:
+  - $ref: '../../components/parameters/files/FileId.yaml'
+get:
+  tags: [Files]
+  operationId: getFile
+  summary: Get file detail
+  security:
+    - bearerAuth: []
+  responses:
+    '200':
+      description: File detail
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/files/FileResponse.yaml'
+    '401':
+      $ref: '../../components/responses/common/Unauthorized.yaml'
+    '404':
+      $ref: '../../components/responses/common/NotFound.yaml'
+post:
+  tags: [Files]
+  operationId: updateFile
+  summary: Update file metadata
+  security:
+    - bearerAuth: []
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '../../components/schemas/files/UpdateFileRequest.yaml'
+  responses:
+    '200':
+      description: File updated
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/files/FileResponse.yaml'
+    '401':
+      $ref: '../../components/responses/common/Unauthorized.yaml'
+    '404':
+      $ref: '../../components/responses/common/NotFound.yaml'
+    '422':
+      $ref: '../../components/responses/common/ValidationError.yaml'
+delete:
+  tags: [Files]
+  operationId: deleteFile
+  summary: Delete file and detach profile title-image references if needed
+  security:
+    - bearerAuth: []
+  responses:
+    '200':
+      description: File deleted with warnings
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/files/DeleteFileWarningResponse.yaml'
+    '204':
+      description: File deleted
+    '401':
+      $ref: '../../components/responses/common/Unauthorized.yaml'
+    '404':
+      $ref: '../../components/responses/common/NotFound.yaml'
+    '422':
+      $ref: '../../components/responses/common/ValidationError.yaml'
