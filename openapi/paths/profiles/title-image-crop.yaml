@@ -1,0 +1,43 @@
+parameters:
+  - $ref: '../../components/parameters/profiles/ProfileId.yaml'
+post:
+  tags: [Profiles]
+  operationId: setProfileTitleImageCrop
+  summary: Set 3:4 crop for selected profile title image
+  security:
+    - bearerAuth: []
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '../../components/schemas/profiles/SetTitleImageCropRequest.yaml'
+  responses:
+    '200':
+      description: Title image crop saved
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/profiles/SetTitleImageCropResponse.yaml'
+    '401':
+      $ref: '../../components/responses/common/Unauthorized.yaml'
+    '422':
+      $ref: '../../components/responses/common/ValidationError.yaml'
+delete:
+  tags: [Profiles]
+  operationId: resetProfileTitleImageCrop
+  summary: Reset custom title image crop and fallback to default title conversion
+  security:
+    - bearerAuth: []
+  responses:
+    '200':
+      description: Title image crop reset
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/profiles/SetTitleImageCropResponse.yaml'
+    '401':
+      $ref: '../../components/responses/common/Unauthorized.yaml'
+    '422':
+      $ref: '../../components/responses/common/ValidationError.yaml'
+

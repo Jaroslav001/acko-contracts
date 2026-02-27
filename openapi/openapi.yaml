@@ -84,6 +84,8 @@ paths:
     $ref: './paths/profiles/list.yaml'
   /api/profiles/{profileId}/galleries:
     $ref: './paths/profiles/galleries-create.yaml'
+  /api/profiles/{profileId}/title-image/crop:
+    $ref: './paths/profiles/title-image-crop.yaml'
   /api/profiles/{profileSlug}:
     $ref: './paths/profiles/detail.yaml'
   /api/profiles/{profileSlug}/viewer-state:
@@ -254,6 +256,12 @@ components:
       $ref: './components/schemas/profiles/ProfileCursorListResponse.yaml'
     ProfileUpdateRequest:
       $ref: './components/schemas/profiles/ProfileUpdateRequest.yaml'
+    TitleImageCropRect:
+      $ref: './components/schemas/profiles/TitleImageCropRect.yaml'
+    SetTitleImageCropRequest:
+      $ref: './components/schemas/profiles/SetTitleImageCropRequest.yaml'
+    SetTitleImageCropResponse:
+      $ref: './components/schemas/profiles/SetTitleImageCropResponse.yaml'
     ProfileUpdateEnvelope:
       $ref: './components/schemas/profiles/ProfileUpdateEnvelope.yaml'
     TopProfilesResponse:

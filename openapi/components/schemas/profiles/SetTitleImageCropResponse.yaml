@@ -1,0 +1,21 @@
+type: object
+required: [data]
+properties:
+  data:
+    type: object
+    required:
+      - title_image_url
+      - title_crop
+    properties:
+      title_image_url:
+        anyOf:
+          - type: string
+            format: uri
+          - type: 'null'
+      title_crop:
+        anyOf:
+          - $ref: './TitleImageCropRect.yaml'
+          - type: 'null'
+    additionalProperties: false
+additionalProperties: false
+

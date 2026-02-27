@@ -6,6 +6,8 @@ properties:
     required:
       - gallery_id
       - profile_title_image_id
+      - profile_title_image_url
+      - profile_title_crop
       - items
     properties:
       gallery_id:
@@ -14,6 +16,13 @@ properties:
       profile_title_image_id:
         type: [integer, 'null']
         minimum: 1
+      profile_title_image_url:
+        type: [string, 'null']
+        format: uri
+      profile_title_crop:
+        anyOf:
+          - $ref: '../profiles/TitleImageCropRect.yaml'
+          - type: 'null'
       items:
         type: array
         items:
