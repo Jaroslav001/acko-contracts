@@ -5,4 +5,7 @@ properties:
   type:
     type: string
     enum: [logged_in]
+  mode:
+    type: string
+    enum: [sync, async]
 additionalProperties: false
