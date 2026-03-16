@@ -41,10 +41,10 @@ get:
       description: Profile status filter.
       schema:
         type: string
-    - name: location
+    - name: area
       in: query
       required: false
-      description: Location slug filter.
+      description: Area slug filter.
       schema:
         type: string
     - name: age

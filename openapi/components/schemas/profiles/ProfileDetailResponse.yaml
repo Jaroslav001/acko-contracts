@@ -9,7 +9,7 @@ required:
   - height
   - weight
   - breast_size
-  - location_id
+  - area_id
   - phone
   - is_wa_user
   - is_premium
@@ -21,9 +21,9 @@ required:
   - created_at
   - updated_at
   - deleted_at
-  - city
-  - region
-  - location
+  - area_name
+  - area_region
+  - area
   - title_image
   - parsed_phone
   - phone_country
@@ -54,7 +54,7 @@ properties:
   breast_size:
     type: [integer, 'null']
     minimum: 1
-  location_id:
+  area_id:
     type: integer
   phone:
     type: string
@@ -83,11 +83,11 @@ properties:
   deleted_at:
     type: [string, 'null']
     format: date-time
-  city:
+  area_name:
     type: [string, 'null']
-  region:
+  area_region:
     type: [string, 'null']
-  location:
+  area:
     type: [string, 'null']
   title_image:
     type: [string, 'null']
